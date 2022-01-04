@@ -1,0 +1,533 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2,
+h1 {
+  font-weight: bold;
+  opacity: 0.7;
+}
+h3,
+h4,
+h5 {
+  opacity: 0.8;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+body img {
+  width: 80px;
+  height: auto;
+}
+
+body .logo img{
+  width: 40px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgb(143, 182, 192);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 45%;
+}
+nav ul li {
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  transition: all 0.5s;
+}
+
+nav a {
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  z-index: 2;
+  font-size: 20px;
+  color: black;
+}
+nav a:hover {
+  color: white;
+}
+
+/* mobile */
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 3px;
+
+  background-color: rgb(0, 0, 0);
+  transition: all 0.5s;
+  /* transition la animatia care va aparea se adauga la parinte */
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  nav ul {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+  }
+  nav ul {
+    position: absolute;
+    top: 10vh;
+    right: 0px;
+    left: 0;
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(
+      to right top,
+      rgba(0, 0, 0, 0.9),
+      rgba(5, 50, 56, 0.9)
+    );
+    backdrop-filter: blur(10px);
+
+    /* animation nav */
+    transform: translateX(-100%);
+    
+    /* transition: transform 0.5s ease-in; */
+
+    z-index: 10;
+  }
+
+  /* adaug clasa la click event cu classList */
+  .navActive {
+    transform: translateX(0%);
+    
+  }
+
+  nav li {
+    opacity: 0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  nav li:hover a {
+    color: rgb(255, 255, 255);
+  }
+  nav li:hover {
+    border-bottom: 2px white solid;
+  }
+
+  nav li a {
+    color: rgb(184, 182, 182);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+}
+
+/* animation */
+
+@keyframes navLinkli {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* burger animation */
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 3px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  /* numar pozitiv (translate) se va duce spre stinga/negativ spre dreapta */
+  /* numar pozitiv (rotate) va duce in sus/ negativ in jos */
+  transform: rotate(45deg) translate(-5px, -4px);
+}
+
+/* Main */
+
+main {
+  min-height: 100vh;
+  background: linear-gradient(to right top, rgb(143, 182, 192), rgb(0, 0, 0));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass {
+  background: linear-gradient(
+    to right bottom,
+    rgb(143, 182, 192),
+    rgba(2, 2, 2, 0.5)
+  );
+  width: 90%;
+  height: 90vh;
+  margin-bottom: 40px;
+  margin-top: 10px;
+
+  border-radius: 10px;
+  z-index: 5;
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle1,
+.circle2 {
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.circle1 {
+  position: absolute;
+  top: 25%;
+  left: 26%;
+  background: linear-gradient(
+    to right bottom,
+    rgb(255, 255, 255),
+    rgba(62, 168, 255, 0.993)
+  );
+  z-index: 2;
+}
+
+.circle2 {
+  position: absolute;
+  top: 30%;
+  right: 25%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(30, 213, 226, 0.2),
+    rgba(20, 228, 255, 0.952)
+  );
+  z-index: 2;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 60%;
+  left: 18%;
+  background: linear-gradient(to left bottom, rgba(240, 0, 0), rgb(8, 9, 10));
+  z-index: 2;
+}
+.circle4 {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 70%;
+  right: 13%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(30, 213, 226, 0.2),
+    rgba(20, 228, 255, 0.952)
+  );
+  z-index: 2;
+}
+/* bord */
+
+.bord {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    to left bottom,
+    rgba(33, 58, 35, 0.5),
+    rgba(43, 149, 236, 0.3)
+  );
+  text-align: center;
+  border-radius: 8px;
+  flex: 2;
+}
+
+.img img {
+  border-radius: 50%;
+}
+.img p {
+  color: white;
+}
+
+.link {
+  margin: 5px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid white;
+}
+.link span {
+  padding-right: 20px;
+}
+
+.more {
+  background: linear-gradient(
+    to left bottom,
+    rgba(240, 0, 0, 0.4),
+    rgba(75, 164, 236, 0.4)
+  );
+  padding: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.more:hover {
+  background: linear-gradient(
+    to left bottom,
+    rgb(240, 0, 0),
+    rgb(75, 164, 236)
+  );
+
+  color: white;
+}
+.more:hover a {
+  color: white;
+  transition: all 0.5s;
+}
+@media (max-width: 900px) {
+  .more {
+    padding: 5px;
+  }
+  .more h3 {
+    font-size: 15px;
+  }
+}
+
+/* Products */
+
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  padding-top: 20px;
+}
+
+.inputProducts h2 {
+  margin-left: 30px;
+  padding: 17px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@media (max-width: 645px) {
+  .inputProducts h2 {
+    font-size: 11px;
+  }
+}
+.inputProducts input {
+  margin-left: 30px;
+  margin-right: auto;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(120, 187, 241, 0.993)
+  );
+  width: 50%;
+  padding: 5px;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.products .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mobile Products */
+@media (max-width: 1075px) {
+  .products {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+  }
+  .products p {
+    display: none;
+  }
+}
+@media (max-width: 1284px) {
+  .products .card ul {
+    list-style-type: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .products h5 {
+    display: none;
+  }
+
+  .products .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.products h3,
+.products p {
+  margin-left: 20px;
+}
+.products .card img {
+  height: 80px;
+  width: auto;
+}
+
+@media (max-width: 650px) {
+  .products h3 {
+    font-size: 10px;
+  }
+
+  .products .card img {
+    height: 45px;
+    width: auto;
+  }
+
+  .products .card {
+    margin-top: 30px;
+    height: 70px;
+    width: 80%;
+  }
+}
+
+.card {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(120, 187, 241, 0.3)
+  );
+  border-radius: 8px;
+  width: 80%;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+
+  box-shadow: 6px 6px 20px rgb(25, 118, 172);
+
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.card:hover {
+  background: linear-gradient(
+    to right bottom,
+    rgba(56, 131, 26, 0.5),
+    rgba(59, 167, 255, 0.5)
+  );
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Staff */
+
+.sectionStaff {
+  flex: 1.5;
+  padding-top: 20px;
+  background: linear-gradient(
+    to right top,
+    rgb(180, 180, 180, 0.1),
+    rgba(10, 104, 60, 0.3)
+  );
+  border-radius: 10px;
+}
+
+.sectionStaff .card2 img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+
+  background-position: center;
+  background-size: cover;
+}
+.sectionStaff .card2 {
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.sectionStaff p {
+  color: white;
+  font-size: 12px;
+}
+
+/* Staff mobile */
+
+@media (max-width: 1272px) {
+  .sectionStaff p {
+    font-size: 10px;
+  }
+  .sectionStaff h3 {
+    font-size: 15px;
+  }
+  .sectionStaff {
+    padding: 10px 10px;
+  }
+  .sectionStaff img {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 800px) {
+  .sectionStaff p {
+    font-size: 8px;
+  }
+  .sectionStaff h3 {
+    font-size: 12px;
+  }
+  .sectionStaff {
+    padding: 10px 10px;
+  }
+
+  .sectionStaff .card2 img {
+    height: 40px;
+    width: 40px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .sectionStaff .card2 img {
+    margin-top: 20px;
+  }
+}
