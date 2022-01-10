@@ -1,3 +1,4 @@
+/* Body */
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +9,6 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-
 h2,
 h1 {
   font-weight: bold;
@@ -24,13 +24,12 @@ a {
   color: black;
 }
 
-/* body */
 body {
   font-family: "Poppins", sans-serif;
 }
 
 body img {
-  width: 60px;
+  width: 80px;
   height: auto;
 }
 
@@ -43,6 +42,7 @@ body .logo img {
 nav {
   background-color: rgb(0, 0, 0);
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -53,7 +53,7 @@ nav {
 nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 45%;
 }
 
@@ -64,7 +64,7 @@ nav ul {
 }
 
 nav ul li {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 13px;
   transition: all 0.5s;
 }
@@ -78,19 +78,20 @@ nav a {
   color: rgb(179, 177, 177);
 }
 nav a:hover {
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
-/* Mobile nav , Burger menu*/
+/* Mobile nav */
 
 .burger div {
   width: 25px;
   height: 3px;
   margin: 3px;
+
   background-color: rgb(180, 180, 180);
   transition: all 0.5s;
+  /* transition la animatia care va aparea se adauga la parinte */
 }
-
 .burger {
   display: none;
   cursor: pointer;
@@ -135,7 +136,7 @@ nav a:hover {
     z-index: 10;
   }
 
-  /* se va adauga clasa la click event cu classList() pentru nav */
+  /*se va  adauga clasa la click event cu classList pe ul */
   .navActive {
     transform: translateX(0%);
   }
@@ -160,7 +161,7 @@ nav a:hover {
   }
 }
 
-/* Animation li */
+/* animation nav */
 
 @keyframes navLinkli {
   from {
@@ -174,7 +175,7 @@ nav a:hover {
   }
 }
 
-/* Burger animation nav*/
+/* burger animation nav */
 
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 3px);
@@ -190,13 +191,11 @@ nav a:hover {
   transform: rotate(45deg) translate(-5px, -4px);
 }
 
-/* Main /Glass section */
+/* Main/ Glass section */
 
 main {
   min-height: 100vh;
   background: linear-gradient(to right top, rgb(143, 182, 192), rgb(0, 0, 0));
-}
-.main-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,17 +210,17 @@ main {
   width: 90%;
   min-height: 90vh;
   margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 10px;
 
   border-radius: 10px;
   z-index: 5;
   backdrop-filter: blur(5px);
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
-/* Glass section responsive */
+/* glass section responsive mobile */
 
 @media (max-width: 500px) {
   .glass {
@@ -229,9 +228,7 @@ main {
     justify-content: center;
     flex-direction: column;
   }
-  .sectionStaff {
-    display: block !important;
-  }
+
   .productsContainer {
     margin-bottom: 20px;
   }
@@ -256,7 +253,7 @@ main {
   }
 
   .products .card {
-    width: 86%;
+    width: 86% !important;
   }
 
   .products h3 {
@@ -267,13 +264,7 @@ main {
     height: 60px !important;
     width: auto !important;
   }
-
-  .sectionStaff img {
-    height: 90px !important;
-    width: 90px !important;
-  }
 }
-
 .circle1,
 .circle2 {
   width: 200px;
@@ -334,8 +325,7 @@ main {
   z-index: 2;
 }
 
-
-/* Bord */
+/* Bord Section*/
 
 .bord {
   display: flex;
@@ -361,7 +351,7 @@ main {
 
 .link {
   margin: 5px;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid white;
@@ -372,7 +362,6 @@ main {
 .link a:hover {
   color: white;
 }
-
 .more {
   background: linear-gradient(
     to left bottom,
@@ -405,8 +394,8 @@ main {
   }
 }
 
+/* Products Section*/
 
-/* Products section */
 .productsContainer {
   display: flex;
   flex-direction: column;
@@ -433,11 +422,12 @@ main {
   background: linear-gradient(
     to right bottom,
     rgba(151, 151, 151, 0.5),
-    rgba(2, 15, 3, 0.5)
+    rgba(2, 15, 3, 0.993)
   );
   width: 50%;
   padding: 5px;
 }
+
 .inputProducts input::placeholder {
   color: white;
 }
@@ -452,11 +442,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.products .card p {
-  font-size: 12px;
-  padding: 2px;
 }
 
 /* Mobile Products */
@@ -510,10 +495,10 @@ main {
   .products .card {
     margin-top: 30px;
     height: 70px;
+    width: 80%;
   }
 }
 
-/* Cards from products */
 .card {
   background: linear-gradient(
     to right bottom,
@@ -541,23 +526,18 @@ main {
   color: white;
 }
 
-/*Staff Section*/
+/* Staff Section*/
 
 .sectionStaff {
   flex: 1.5;
   padding-top: 20px;
   background: linear-gradient(
-    to left top,
-    rgba(33, 58, 35, 0.8),
-    rgba(43, 149, 236, 0.3)
+    to right top,
+    rgb(180, 180, 180, 0.1),
+    rgba(10, 104, 60, 0.3)
   );
   border-radius: 10px;
-}
-
-.sectionStaff .title-chief {
-  margin-top: 15px;
-  text-align: center;
-  color: white;
+  display: none;
 }
 
 .sectionStaff .card2 img {
@@ -567,7 +547,6 @@ main {
 
   background-position: center;
   background-size: cover;
-  background-color: white;
 }
 .sectionStaff .card2 {
   margin-top: 20px;
@@ -655,9 +634,7 @@ main {
   z-index: 6;
   box-shadow: 0px 0px 20px rgb(0, 0, 0);
   padding: 10px;
-
   transform: scale(0);
-
   transition: all 0.5s;
   opacity: 1;
 }
