@@ -4,10 +4,10 @@
 
 ## The site contains:
 
-*The site is completely transparent
-*It has several sections with different apple products
-*Hover animations
-*Messenger button
-*Messenger menu
-*Slide menu at the small size of the viewport
-*Responsive to all viewport sizes
+* The site is completely transparent
+* It has several sections with different apple products
+* Hover animations
+* Messenger button
+* Messenger menu
+* Slide menu at the small size of the viewport
+* Responsive to all viewport sizes
